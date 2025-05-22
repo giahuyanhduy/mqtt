@@ -23,7 +23,7 @@ cd /home || { echo "Lỗi: Không thể di chuyển vào thư mục /home. Kiể
 
 # Tải tệp mqtt.zip từ GitHub
 echo "Đang tải file mqtt.zip..."
-curl -L -o /tmp/mqtt.zip https://github.com/giahuyanhduy/blog/raw/main/mqtt.zip
+curl -L -o /tmp/mqtt.zip https://github.com/giahuyanhduy/blog/raw/main/mqtt.zip?raw=true
 
 # Kiểm tra xem file mqtt.zip đã được tải thành công hay chưa
 if [ ! -f /tmp/mqtt.zip ]; then

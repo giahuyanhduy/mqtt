@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Di chuyển đến thư mục /home
-cd /home || exit 1
+cd /home || exit
 
-# Tải file mqtt.zip từ GitHub
-wget https://github.com/giahuyanhduy/main/raw/mqtt.zip
+# Tải tệp mqtt.zip từ GitHub
+curl -L -o /tmp/mqtt.zip https://github.com/giahuyanhduy/main/raw/mqtt.zip
 
-# Giải nén file mqtt.zip vào thư mục hiện tại
-unzip -o mqtt.zip
+# Giải nén file mqtt.zip vào /home
+unzip -o /tmp/mqtt.zip -d /home
 
-# Di chuyển vào thư mục MQTT (giả sử thư mục MQTT đã được tạo từ file zip)
-cd /home/MQTT || exit 1
+# Di chuyển vào thư mục /home/MQTT (thư mục đã có sẵn trong file zip)
+cd /home/MQTT || exit
 
 # Cài đặt các gói Node.js
 npm install axios mqtt@4 moment moment-timezone
@@ -20,5 +20,8 @@ npm install axios mqtt@4 moment moment-timezone
 
 # Chạy ứng dụng (giả sử bạn có file chính là app.js, điều chỉnh nếu khác)
 node app.js
+
+# Xóa tệp zip đã tải
+rm /tmp/mqtt.zip
 
 echo "Tải về, giải nén, cài đặt và chạy ứng dụng thành công!"

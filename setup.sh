@@ -4,7 +4,7 @@
 cd /home || exit
 
 # Tải tệp mqtt.zip từ GitHub
-curl -L -o /tmp/mqtt.zip https://github.com/giahuyanhduy/main/raw/mqtt.zip
+curl -L -o /tmp/mqtt.zip https://github.com/giahuyanhduy/main/mqtt.zip
 
 # Giải nén file mqtt.zip vào /home
 unzip -o /tmp/mqtt.zip -d /home
